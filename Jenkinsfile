@@ -8,6 +8,11 @@ pipeline {
         }
       }
     }
+    stage ('slack notification'){
+      steps {
+        slackSend channel: '26th-june--sock-shop-microservices-kubernetes-project---us-team', message: 'New notification', tokenCredentialId: 'slack'
+      }
+    }
     stage ('prompt for approval'){
       steps {
         timeout(activity: true, time: 5) {
