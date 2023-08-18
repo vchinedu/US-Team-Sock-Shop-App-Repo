@@ -10,7 +10,7 @@ pipeline {
     }
     stage ('slack notification'){
       steps {
-        slackSend channel: '24th-july--sock-shop-microservices-kubernetes-project---us-team', message: 'New notification', tokenCredentialId: 'slack'
+        slackSend channel: '14th-July--sock-shop-microservices-kubernetes-project---us-team', message: 'New notification', tokenCredentialId: 'slack'
       }
     }
     stage ('prompt for approval'){
