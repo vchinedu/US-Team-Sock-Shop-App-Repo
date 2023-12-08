@@ -8,11 +8,11 @@ pipeline {
         }
       }
     }
-    // stage ('slack notification'){
-    //   steps {
-    //     slackSend channel: '13-november-sock-shop-kubernetes-project-using-ansible-eu-team-2', message: 'New notification', tokenCredentialId: 'slack'
-    //   }
-    // }
+    stage ('slack notification'){
+       steps {
+        slackSend channel: '13-november-sock-shop-kubernetes-project-using-ansible-eu-team-2', message: 'New notification', tokenCredentialId: 'slack'
+      }
+    }
     stage ('prompt for approval'){
       steps {
         timeout(activity: true, time: 5) {
