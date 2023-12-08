@@ -10,7 +10,7 @@ pipeline {
     }
     // stage ('slack notification'){
     //   steps {
-    //     slackSend channel: '18th-september-sock-shop-microservices-kubernetes-project---eu-team-2', message: 'New notification', tokenCredentialId: 'slack'
+    //     slackSend channel: '13-november-sock-shop-kubernetes-project-using-ansible-eu-team-2', message: 'New notification', tokenCredentialId: 'slack'
     //   }
     // }
     stage ('prompt for approval'){
