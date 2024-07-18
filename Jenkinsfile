@@ -8,7 +8,7 @@ pipeline {
         }
       }
     }
-    stage ('slack notification'){
+    stage ('slack notification 1'){
       steps {
         slackSend channel: '24th-june-sock-shop-kubernetes-using-kubeadm', message: 'New Deployment into stage', tokenCredentialId: 'slack'
       }
@@ -27,7 +27,7 @@ pipeline {
         }
       }
     }
-    stage ('slack notification'){
+    stage ('slack notification 2'){
       steps {
         slackSend channel: '24th-june-sock-shop-kubernetes-using-kubeadm', message: 'New Deployment into production', tokenCredentialId: 'slack'
       }
