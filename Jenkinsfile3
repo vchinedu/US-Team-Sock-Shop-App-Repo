@@ -12,7 +12,7 @@ pipeline {
     }
     stage ('slack notification a'){
       steps {
-        slackSend channel: 'Cloudhight', message: 'New Stage Deployment', teamDomain: '24th-june-sock-shop-kubernetes-using-kubeadm', tokenCredentialId: 'slack'
+        slackSend channel: 'Cloudhight', message: 'New Stage Deployment', teamDomain: '16th-sep-sock-shop-kubeadm-project', tokenCredentialId: 'slack'
       }
     }
     stage ('prompt for approval'){
@@ -33,7 +33,7 @@ pipeline {
     }
     stage ('slack notification b'){
       steps {
-        slackSend channel: 'Cloudhight', message: 'New Production Deployment', teamDomain: '24th-june-sock-shop-kubernetes-using-kubeadm', tokenCredentialId: 'slack'
+        slackSend channel: 'Cloudhight', message: 'New Production Deployment', teamDomain: '16th-sep-sock-shop-kubeadm-project', tokenCredentialId: 'slack'
       }
     }
   }
