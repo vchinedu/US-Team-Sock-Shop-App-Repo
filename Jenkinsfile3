@@ -5,14 +5,14 @@ pipeline {
       steps {
         sshagent(['ansible-key']) {
           sh '''
-            ssh -t -t -o StrictHostKeyChecking=no -o ProxyCommand="ssh -W %h:%p -o StrictHostKeyChecking=no ubuntu@34.243.61.66" ubuntu@10.0.4.215 "ansible-playbook /home/ubuntu/playbooks/stage-env.yaml"
+            ssh -t -t -o StrictHostKeyChecking=no -o ProxyCommand="ssh -W %h:%p -o StrictHostKeyChecking=no ubuntu@3.10.226.9" ubuntu@10.0.4.88 "ansible-playbook /home/ubuntu/playbooks/stage-env.yaml"
           '''
         }
       }
     }
     stage ('slack notification a'){
       steps {
-        slackSend channel: 'Cloudhight', message: 'New Stage Deployment', teamDomain: '16th-sep-sock-shop-kubeadm-project', tokenCredentialId: 'slack'
+        slackSend channel: 'Cloudhight', message: 'New Stage Deployment', teamDomain: '@V. Chinedu Ataka', tokenCredentialId: 'slack'
       }
     }
     stage ('prompt for approval'){
@@ -26,14 +26,14 @@ pipeline {
       steps {
         sshagent(['ansible-key']) {
           sh '''
-            ssh -t -t -o StrictHostKeyChecking=no -o ProxyCommand="ssh -W %h:%p -o StrictHostKeyChecking=no ubuntu@34.243.61.66" ubuntu@10.0.4.215 "ansible-playbook /home/ubuntu/playbooks/prod-env.yaml"
+            ssh -t -t -o StrictHostKeyChecking=no -o ProxyCommand="ssh -W %h:%p -o StrictHostKeyChecking=no ubuntu@3.10.226.9" ubuntu@10.0.4.88 "ansible-playbook /home/ubuntu/playbooks/prod-env.yaml"
           '''
         }
       }
     }
     stage ('slack notification b'){
       steps {
-        slackSend channel: 'Cloudhight', message: 'New Production Deployment', teamDomain: '16th-sep-sock-shop-kubeadm-project', tokenCredentialId: 'slack'
+        slackSend channel: 'Cloudhight', message: 'New Production Deployment', teamDomain: '@V. Chinedu Ataka', tokenCredentialId: 'slack'
       }
     }
   }
